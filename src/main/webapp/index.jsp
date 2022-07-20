@@ -1,13 +1,17 @@
-ee<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Main menu</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
+    <form action="${pageContext.request.contextPath}/add-employee">
+        <button type="submit">Добавить работника</button>
+        <button type="submit">Удалить работника</button>
+        <button type="submit">Посмотреть всех работников по департаменту</button>
+        <button type="submit">Изменить работника</button>
+    </form>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+
 </body>
 </html>
