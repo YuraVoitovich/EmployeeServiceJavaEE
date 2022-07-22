@@ -1,6 +1,6 @@
 package com.example.employeeservicejavaee.servlets;
 
-import com.example.employeeservicejavaee.DAO.impl.EmployeeDAOImpl;
+import com.example.employeeservicejavaee.DAO.DAOProvider;
 import com.example.employeeservicejavaee.DAO.iterfaces.EmployeeDAO;
 import com.example.employeeservicejavaee.entity.Department;
 import com.example.employeeservicejavaee.entity.Employee;
@@ -17,7 +17,7 @@ import java.util.UUID;
 public class SubmitAdding extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+        EmployeeDAO employeeDAO = DAOProvider.getInstance().getEmployeeDAO();
         String name = req.getParameter("name");
         String surname = req.getParameter("surname");
         String department = req.getParameter("department");
